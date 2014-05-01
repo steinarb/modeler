@@ -92,5 +92,6 @@
     <module>modeler.test</module>
     <module>modeler.feature</module>
     <module>modeler.site</module>
+    <module>modeler.core.test</module>
   </modules>
 </project>
