@@ -17,7 +17,7 @@
          <action
                label="&amp;modeler Sample Action"
                icon="icons/sample.gif"
-               class="foo.core.SampleAction"
+               class="no.priv.bang.modeler.core.SampleAction"
                tooltip="Hello, Mavenized Eclipse. modeler is built with Tycho"
                menubarPath="sampleMenu/sampleGroup"
                toolbarPath="sampleGroup"

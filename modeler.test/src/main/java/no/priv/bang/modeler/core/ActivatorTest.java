@@ -1,7 +1,8 @@
-package foo.core;
+package no.priv.bang.modeler.core;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+import no.priv.bang.modeler.core.Activator;
 
 import org.junit.Test;
 

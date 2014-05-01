@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: modeler Core Plugin
 Bundle-SymbolicName: modeler.core;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: foo.core.Activator
+Bundle-Activator: no.priv.bang.modeler.core.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime
 Bundle-ActivationPolicy: lazy

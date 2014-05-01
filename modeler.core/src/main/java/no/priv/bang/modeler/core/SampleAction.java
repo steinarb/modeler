@@ -1,4 +1,4 @@
-package foo.core;
+package no.priv.bang.modeler.core;
 
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.viewers.ISelection;

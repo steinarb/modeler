@@ -1,4 +1,4 @@
-package foo.core;
+package no.priv.bang.modeler.core;
 
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
