@@ -2,6 +2,8 @@ package no.priv.bang.modeler.core.model;
 
 import static org.junit.Assert.*;
 
+import java.util.List;
+
 import org.junit.Test;
 
 public class NodeTest {
@@ -13,8 +15,29 @@ public class NodeTest {
 	 */
 	@Test
 	public void testCreateNode() {
-		Node node = new Node();
+		Node node = new Node("label");
 		assertNotNull(node); // Avoid unused variable warning (this assert will never fail)
+	}
+	
+	@Test
+	public void testGetLabel() {
+		Node node = new Node("Node label");
+		String label = node.getLabel();
+		assertEquals("Node label", label);
+	}
+	
+	@Test
+	public void getSourceConnections() {
+		Node node = new Node("Node label");
+		List<Connection> connections = node.getSourceConnections();
+		assertEquals(0, connections.size());
+	}
+	
+	@Test
+	public void getTargetConnections() {
+		Node node = new Node("Node label");
+		List<Connection> connections = node.getTargetConnections();
+		assertEquals(0, connections.size());
 	}
 
 }
