@@ -25,5 +25,26 @@
          </action>
       </actionSet>
    </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            class="no.priv.bang.modeler.core.gef.View"
+            icon="icons/sample.gif"
+            id="GEFNeo4J.view"
+            name="GEF editor">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.jdt.ui.JavaPerspective">
+         <view
+               id="GEFNeo4J.view"
+               ratio="0.5"
+               relationship="right"
+               relative="org.eclipse.ui.views.ProblemView">
+         </view>
+      </perspectiveExtension>
+   </extension>
 
 </plugin>
