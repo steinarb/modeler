@@ -16,6 +16,7 @@ import org.eclipse.swt.graphics.Color;
 
 public class NodeEditPart extends AbstractGraphicalEditPart {
 
+	@SuppressWarnings("unused")
 	private ChopboxAnchor m_anchor;
 
 	@Override
@@ -31,6 +32,7 @@ public class NodeEditPart extends AbstractGraphicalEditPart {
 		System.out.println("Called HelloEditPart.createEditPolicies()");
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	protected void refreshVisuals() {
 		Node node = (Node)getModel();
@@ -55,12 +57,14 @@ public class NodeEditPart extends AbstractGraphicalEditPart {
 		return connectPart;
 	}
 
+	@SuppressWarnings("rawtypes")
 	@Override
 	protected List getModelSourceConnections() {
 		List 	sourceConnections = ((Node) getModel()).getSourceConnections();
 		return sourceConnections;
 	}
 
+	@SuppressWarnings("rawtypes")
 	@Override
 	protected List getModelTargetConnections() {
 		List targetConnection = ((Node) getModel()).getTargetConnections();
