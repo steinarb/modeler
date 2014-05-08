@@ -23,6 +23,15 @@
                toolbarPath="sampleGroup"
                id="foo.core.SampleAction">
          </action>
+         <action
+               class="no.priv.bang.modeler.core.OpenGefEditorAction"
+               icon="icons/sample.gif"
+               id="modeler.core.OpenGefEditorAction"
+               label="Open GEF Editor"
+               menubarPath="sampleMenu/sampleGroup"
+               style="push"
+               toolbarPath="sampleGroup">
+         </action>
       </actionSet>
    </extension>
    <extension
@@ -45,6 +54,16 @@
                relative="org.eclipse.ui.views.ProblemView">
          </view>
       </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="no.priv.bang.modeler.core.gef.editor.Editor"
+            default="false"
+            icon="icons/sample.gif"
+            id="no.priv.bang.modeler.core.gef.editor.Editor"
+            name="GEF Editor">
+      </editor>
    </extension>
 
 </plugin>
