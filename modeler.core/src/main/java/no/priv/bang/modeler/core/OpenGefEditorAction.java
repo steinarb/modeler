@@ -12,7 +12,6 @@ public class OpenGefEditorAction implements IWorkbenchWindowActionDelegate {
 
 	private IWorkbenchWindow window;
 
-	@Override
 	public void run(IAction action) {
 		try {
 			System.out.println("Opening GEF editor");
@@ -24,19 +23,16 @@ public class OpenGefEditorAction implements IWorkbenchWindowActionDelegate {
 		}
 	}
 
-	@Override
 	public void selectionChanged(IAction action, ISelection selection) {
 		// TODO Auto-generated method stub
 
 	}
 
-	@Override
 	public void dispose() {
 		// TODO Auto-generated method stub
 
 	}
 
-	@Override
 	public void init(IWorkbenchWindow window) {
 		this.window = window;
 	}

@@ -26,70 +26,58 @@ public class StringEditorInput implements IStorageEditorInput {
 		this.inputString = inputString;
 	}
 
-	@Override
 	public boolean exists() {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
-	@Override
 	public ImageDescriptor getImageDescriptor() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
 	public String getName() {
 		return "input name";
 	}
 
-	@Override
 	public IPersistableElement getPersistable() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
 	public String getToolTipText() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@SuppressWarnings("rawtypes")
-	@Override
 	public Object getAdapter(Class adapter) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
 	public IStorage getStorage() throws CoreException {
 		return new IStorage() {
 
 			@SuppressWarnings("rawtypes")
-			@Override
 			public Object getAdapter(Class adapter) {
 				// TODO Auto-generated method stub
 				return null;
 			}
 
-			@Override
 			public InputStream getContents() throws CoreException {
 				return new StringBufferInputStream(inputString);
 			}
 
-			@Override
 			public IPath getFullPath() {
 				// TODO Auto-generated method stub
 				return null;
 			}
 
-			@Override
 			public String getName() {
 				return StringEditorInput.this.getName();
 			}
 
-			@Override
 			public boolean isReadOnly() {
 				// TODO Auto-generated method stub
 				return false;
