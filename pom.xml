@@ -97,6 +97,7 @@
     </pluginManagement>
   </build>  
   <modules>
+    <module>modeler.target</module>
     <module>modeler.core</module>
     <module>modeler.test</module>
     <module>modeler.feature</module>

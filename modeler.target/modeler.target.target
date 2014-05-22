@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pde version="3.8"?><target name="modeler.target" sequenceNumber="1">
+<locations>
+<location id="org.eclipse.cvs.source" path="${eclipse_home}" type="Feature"/>
+<location id="org.eclipse.cvs" path="${eclipse_home}" type="Feature"/>
+<location id="org.eclipse.e4.rcp.source" path="${eclipse_home}" type="Feature"/>
+<location id="org.eclipse.e4.rcp" path="${eclipse_home}" type="Feature"/>
+<location id="org.eclipse.egit" path="${eclipse_home}" type="Feature"/>
+<location id="org.eclipse.emf.common" path="${eclipse_home}" type="Feature"/>
+<location id="org.eclipse.emf.ecore" path="${eclipse_home}" type="Feature"/>
+<location id="org.eclipse.epp.mpc" path="${eclipse_home}" type="Feature"/>
+<location id="org.eclipse.epp.package.common.feature" path="${eclipse_home}" type="Feature"/>
+<location id="org.eclipse.epp.package.standard.feature" path="${eclipse_home}" type="Feature"/>
+<location id="org.eclipse.equinox.p2.core.feature.source" path="${eclipse_home}" type="Feature"/>
+<location id="org.eclipse.equinox.p2.core.feature" path="${eclipse_home}" type="Feature"/>
+<location id="org.eclipse.equinox.p2.discovery.feature" path="${eclipse_home}" type="Feature"/>
+<location id="org.eclipse.equinox.p2.extras.feature.source" path="${eclipse_home}" type="Feature"/>
+<location id="org.eclipse.equinox.p2.extras.feature" path="${eclipse_home}" type="Feature"/>
+<location id="org.eclipse.equinox.p2.rcp.feature.source" path="${eclipse_home}" type="Feature"/>
+<location id="org.eclipse.equinox.p2.rcp.feature" path="${eclipse_home}" type="Feature"/>
+<location id="org.eclipse.equinox.p2.user.ui.source" path="${eclipse_home}" type="Feature"/>
+<location id="org.eclipse.equinox.p2.user.ui" path="${eclipse_home}" type="Feature"/>
+<location id="org.eclipse.help.source" path="${eclipse_home}" type="Feature"/>
+<location id="org.eclipse.help" path="${eclipse_home}" type="Feature"/>
+<location id="org.eclipse.jdt.source" path="${eclipse_home}" type="Feature"/>
+<location id="org.eclipse.jdt" path="${eclipse_home}" type="Feature"/>
+<location id="org.eclipse.jgit" path="${eclipse_home}" type="Feature"/>
+<location id="org.eclipse.m2e.feature" path="${eclipse_home}" type="Feature"/>
+<location id="org.eclipse.pde.source" path="${eclipse_home}" type="Feature"/>
+<location id="org.eclipse.pde" path="${eclipse_home}" type="Feature"/>
+<location id="org.eclipse.platform.source" path="${eclipse_home}" type="Feature"/>
+<location id="org.eclipse.platform" path="${eclipse_home}" type="Feature"/>
+<location id="org.eclipse.rcp.configuration" path="${eclipse_home}" type="Feature"/>
+<location id="org.eclipse.rcp.source" path="${eclipse_home}" type="Feature"/>
+<location id="org.eclipse.rcp" path="${eclipse_home}" type="Feature"/>
+<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.gef.sdk.feature.group" version="3.9.1.201308190730"/>
+<repository location="http://download.eclipse.org/releases/kepler"/>
+</location>
+</locations>
+</target>
