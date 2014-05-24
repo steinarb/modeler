@@ -70,6 +70,15 @@
               <arch>x86</arch>
             </environment>
           </environments>
+          <dependency-resolution>
+            <extraRequirements>
+              <requirement>
+                <type>eclipse-plugin</type>
+                <id>org.eclipse.ui</id>
+                <versionRange>0.0.0</versionRange>
+              </requirement>
+            </extraRequirements>
+          </dependency-resolution>
         </configuration>
       </plugin>
     </plugins>
