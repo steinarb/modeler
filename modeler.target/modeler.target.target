@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?pde version="3.8"?><target name="modeler.target" sequenceNumber="26">
+<?pde version="3.8"?><target name="modeler.target" sequenceNumber="30">
 <locations>
-<location id="org.eclipse.jdt.source" path="${eclipse_home}" type="Feature"/>
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
 <unit id="org.eclipse.gef.sdk.feature.group" version="3.9.1.201308190730"/>
 <repository location="http://download.eclipse.org/releases/kepler"/>
 </location>
-<location id="org.eclipse.jdt" path="${eclipse_home}" type="Feature"/>
-<location id="org.eclipse.platform" path="${eclipse_home}" type="Feature"/>
-<location id="org.eclipse.platform.source" path="${eclipse_home}" type="Feature"/>
-<location id="org.eclipse.e4.rcp" path="${eclipse_home}" type="Feature"/>
-<location id="org.eclipse.e4.rcp.source" path="${eclipse_home}" type="Feature"/>
 </locations>
 </target>
