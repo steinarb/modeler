@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.smb-tec.neo4j</groupId>
-    <artifactId>neo4j-community</artifactId>
+    <artifactId>neo4j-osgi-bundle</artifactId>
     <name>Neo4j GraphDB - OSGi Bundle</name>
     <version>2.2-SNAPSHOT</version>
     <packaging>bundle</packaging>
