@@ -122,5 +122,6 @@
     <module>modeler.feature</module>
     <module>modeler.site</module>
     <module>modeler.core.test</module>
+    <module>neo4j-osgi-bundle</module>
   </modules>
 </project>
