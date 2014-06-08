@@ -1,0 +1,147 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.smb-tec.neo4j</groupId>
+    <artifactId>neo4j-community</artifactId>
+    <name>Neo4j GraphDB - OSGi Bundle</name>
+    <version>2.2-SNAPSHOT</version>
+    <packaging>bundle</packaging>
+
+    <organization>
+        <name>SMB GmbH</name>
+        <url>http://www.smb-tec.com/en</url>
+    </organization>
+
+    <properties>
+        <neo4j.version>${project.version}</neo4j.version>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>neo4j-snapshots</id>
+            <url>http://m2.neo4j.org/content/groups/public/</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.neo4j</groupId>
+            <artifactId>neo4j</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.neo4j</groupId>
+            <artifactId>server-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.1.1</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.4</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+            <version>3.2.1</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>2.4.0</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Import-Package>!com.sun.*,!sun.*,scala.*;resolution:="optional",org.codehaus.*;resolution:="optional",groovy.*;resolution:="optional",javax.servlet.*;resolution:="optional",javax.jms.*;resolution:="optional",javax.mail.*;resolution:="optional",org.osgi.service.blueprint.*;version="[1.0.0,2.0.0)";resolution:="optional",org.apache.avalon.framework.logger;resolution:="optional",org.apache.commons.codec.*;resolution:="optional",org.apache.commons.jxpath.*;resolution:="optional",org.apache.log.*;resolution:="optional",org.apache.log4j.*;resolution:="optional",org.apache.tools.ant.*;resolution:="optional",*</Import-Package>
+                        <_exportcontents>org.neo4j.*;version="${neo4j.version}";-split-package:=merge-first,javax.*,org.apache.*</_exportcontents>
+                        <Private-Package>ch.qos.logback.*</Private-Package>
+                        <Embed-Dependency>*;scope=compile|runtime;type=!pom</Embed-Dependency>
+                        <Include-Resource>{maven-dependencies}</Include-Resource>
+                        <Bundle-Vendor>${project.organization.name}</Bundle-Vendor>
+                        <Bundle-ClassPath>.,{maven-dependencies}</Bundle-ClassPath>
+                        <Embed-Transitive>true</Embed-Transitive>
+                    </instructions>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-release-plugin</artifactId>
+                <configuration>
+                    <useReleaseProfile>true</useReleaseProfile>
+                    <goals>deploy</goals>
+                    <arguments>-DskipTests -Dinvoker.skip=true -Psonatype-oss-release</arguments>
+                </configuration>
+            </plugin>
+        </plugins>
+
+    </build>
+
+    <developers>
+        <developer>
+            <organization>SMB GmbH</organization>
+            <name>Lars Martin</name>
+            <email>lars.martin@smb-tec.com</email>
+        </developer>
+    </developers>
+
+    <scm>
+        <url>git@github.com:BluWings/neo4j-osgi-bundle.git</url>
+        <connection>scm:git:git@github.com:BluWings/neo4j-osgi-bundle.git</connection>
+        <developerConnection>scm:git:git@github.com:BluWings/neo4j-osgi-bundle.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
+    <issueManagement>
+        <system>GitHub Issues</system>
+        <url>https://github.com/BluWings/neo4j-osgi-bundle/issues</url>
+    </issueManagement>
+
+    <url>http://www.github.com/BluWings/neo4j-osgi-bundle</url>
+
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>9</version>
+    </parent>
+
+    <description>This project provides an OSGi compatible bundle artifact of the Neo4j Database.</description>
+
+    <profiles>
+        <profile>
+            <id>release</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+</project>
