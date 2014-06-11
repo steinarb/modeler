@@ -24,7 +24,7 @@ public class Editor extends GraphicalEditorWithFlyoutPalette {
 		GraphicalViewer graphicalViewer = getGraphicalViewer();
 		graphicalViewer.setRootEditPart(new ScalableRootEditPart());
 		graphicalViewer.setEditPartFactory(new GraphicalPartFactory());
-		graphicalViewer.setContents(new Model());
+		graphicalViewer.setContents(new Model(getEditorInput().getName()));
 	}
 
 	@Override

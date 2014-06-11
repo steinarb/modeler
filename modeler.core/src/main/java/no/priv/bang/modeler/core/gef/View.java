@@ -29,7 +29,7 @@ public class View extends ViewPart {
 	@Override
 	public void createPartControl(Composite parent) {
 		// Create a dummy model
-		model = new Model();
+		model = new Model("dummy");
 
 		// Initialize the viewer, 'parent' is the
 		// enclosing RCP windowframe

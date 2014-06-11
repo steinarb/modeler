@@ -10,13 +10,13 @@ public class ModelTest {
 
 	@Test
 	public void testCreateModel() {
-		Model model = new Model();
+		Model model = new Model("target/graphdb");
 		assertNotNull(model); // Avoid unused variable warning (this assert will never fail)
 	}
 	
 	@Test
 	public void testGetNodes() {
-		Model model = new Model();
+		Model model = new Model("target/graphdb");
 		List<Node> nodes = model.getNodes();
 		assertNotNull(nodes);
 		assertNotEquals(0, nodes.size());
