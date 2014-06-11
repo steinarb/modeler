@@ -3,10 +3,14 @@ package no.priv.bang.modeler.core.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.neo4j.graphdb.factory.GraphDatabaseFactory;
+
 public class Model {
 	List<Node> nodes = new ArrayList<Node>();
+	private Object graphDb;
 	
-	public Model() {
+	public Model(String dbPath) {
+		graphDb = new GraphDatabaseFactory().newEmbeddedDatabaseBuilder(dbPath);
 		for (int i = 0; i < 10; i++) {
 			Node node = new Node("Node " + i );
 			nodes.add(node);
