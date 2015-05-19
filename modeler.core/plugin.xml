@@ -1,69 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
-   <extension
-         point="org.eclipse.ui.actionSets">
-      <actionSet
-            label="modeler Sample Action Set"
-            visible="true"
-            id="modeler.core.actionSet">
-         <menu
-               label="modeler Sample &amp;Menu"
-               id="sampleMenu">
-            <separator
-                  name="sampleGroup">
-            </separator>
-         </menu>
-         <action
-               label="&amp;modeler Sample Action"
-               icon="icons/sample.gif"
-               class="no.priv.bang.modeler.core.SampleAction"
-               tooltip="Hello, Mavenized Eclipse. modeler is built with Tycho"
-               menubarPath="sampleMenu/sampleGroup"
-               toolbarPath="sampleGroup"
-               id="foo.core.SampleAction">
-         </action>
-         <action
-               class="no.priv.bang.modeler.core.OpenGefEditorAction"
-               icon="icons/sample.gif"
-               id="modeler.core.OpenGefEditorAction"
-               label="Open GEF Editor"
-               menubarPath="sampleMenu/sampleGroup"
-               style="push"
-               toolbarPath="sampleGroup">
-         </action>
-      </actionSet>
-   </extension>
-   <extension
-         point="org.eclipse.ui.views">
-      <view
-            class="no.priv.bang.modeler.core.gef.View"
-            icon="icons/sample.gif"
-            id="GEFNeo4J.view"
-            name="GEF editor">
-      </view>
-   </extension>
-   <extension
-         point="org.eclipse.ui.perspectiveExtensions">
-      <perspectiveExtension
-            targetID="org.eclipse.jdt.ui.JavaPerspective">
-         <view
-               id="GEFNeo4J.view"
-               ratio="0.5"
-               relationship="right"
-               relative="org.eclipse.ui.views.ProblemView">
-         </view>
-      </perspectiveExtension>
-   </extension>
-   <extension
-         point="org.eclipse.ui.editors">
-      <editor
-            class="no.priv.bang.modeler.core.gef.editor.Editor"
-            default="false"
-            icon="icons/sample.gif"
-            id="no.priv.bang.modeler.core.gef.editor.Editor"
-            name="GEF Editor">
-      </editor>
-   </extension>
+ <extension
+     point="org.eclipse.ui.actionSets">
+  <actionSet
+      label="modeler Sample Action Set"
+      visible="true"
+      id="modeler.core.actionSet">
+   <menu
+       label="modeler Sample &amp;Menu"
+       id="sampleMenu">
+    <separator
+        name="sampleGroup">
+    </separator>
+   </menu>
+   <action
+       label="&amp;modeler Sample Action"
+       icon="icons/sample.gif"
+       class="no.priv.bang.modeler.core.SampleAction"
+       tooltip="Hello, Mavenized Eclipse. modeler is built with Tycho"
+       menubarPath="sampleMenu/sampleGroup"
+       toolbarPath="sampleGroup"
+       id="foo.core.SampleAction">
+   </action>
+   <action
+       class="no.priv.bang.modeler.core.OpenGefEditorAction"
+       icon="icons/sample.gif"
+       id="modeler.core.OpenGefEditorAction"
+       label="Open GEF Editor"
+       menubarPath="sampleMenu/sampleGroup"
+       style="push"
+       toolbarPath="sampleGroup">
+   </action>
+  </actionSet>
+ </extension>
+ <extension
+     point="org.eclipse.ui.views">
+  <view
+      class="no.priv.bang.modeler.core.gef.View"
+      icon="icons/sample.gif"
+      id="GEFNeo4J.view"
+      name="GEF editor">
+  </view>
+ </extension>
+ <extension
+     point="org.eclipse.ui.perspectiveExtensions">
+  <perspectiveExtension
+      targetID="org.eclipse.jdt.ui.JavaPerspective">
+   <view
+       id="GEFNeo4J.view"
+       ratio="0.5"
+       relationship="right"
+       relative="org.eclipse.ui.views.ProblemView">
+   </view>
+  </perspectiveExtension>
+ </extension>
+ <extension
+     point="org.eclipse.ui.editors">
+  <editor
+      class="no.priv.bang.modeler.core.gef.editor.Editor"
+      default="false"
+      icon="icons/sample.gif"
+      id="no.priv.bang.modeler.core.gef.editor.Editor"
+      name="GEF Editor">
+  </editor>
+ </extension>
 
 </plugin>
