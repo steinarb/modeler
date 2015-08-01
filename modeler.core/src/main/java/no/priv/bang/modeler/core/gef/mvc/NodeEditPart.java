@@ -32,7 +32,6 @@ public class NodeEditPart extends AbstractGraphicalEditPart {
         System.out.println("Called HelloEditPart.createEditPolicies()");
     }
 
-    @SuppressWarnings("deprecation")
     @Override
     protected void refreshVisuals() {
         Node node = (Node)getModel();
@@ -42,7 +41,7 @@ public class NodeEditPart extends AbstractGraphicalEditPart {
         getFigure().setBounds(bounds);
         Label label = new Label(node.getLabel());
         label.setTextAlignment(PositionConstants.CENTER);
-        label.setBounds(bounds.crop(IFigure.NO_INSETS));
+        label.setBounds(bounds.shrink(IFigure.NO_INSETS));
         getFigure().add(label);
     }
 
