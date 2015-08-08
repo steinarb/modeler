@@ -61,8 +61,8 @@
       class="no.priv.bang.modeler.core.gef.editor.Editor"
       default="false"
       icon="icons/sample.gif"
-      id="no.priv.bang.modeler.core.gef.editor.Editor"
-      name="GEF Editor">
+      id="no.priv.bang.modelstore.gef.editor.Editor"
+      name="Modelstore Editor">
   </editor>
  </extension>
 

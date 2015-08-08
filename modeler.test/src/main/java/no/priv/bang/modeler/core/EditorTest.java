@@ -21,7 +21,7 @@ public class EditorTest {
      */
     @Test
     public void testFindEditorById() {
-        String editorId = "no.priv.bang.modeler.core.gef.editor.Editor";
+        String editorId = "no.priv.bang.modelstore.gef.editor.Editor";
         EditorDescriptor descriptor = (EditorDescriptor) PlatformUI.getWorkbench().getEditorRegistry().findEditor(editorId);
         assertNotNull(descriptor);
         assertEquals(Editor.class.getName(), descriptor.getClassName());
@@ -35,7 +35,7 @@ public class EditorTest {
     public void testOpenEditorById()
         throws PartInitException
     {
-        String editorId = "no.priv.bang.modeler.core.gef.editor.Editor";
+        String editorId = "no.priv.bang.modelstore.gef.editor.Editor";
         IWorkbenchWindow window = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
         IEditorPart editorPart = window.getActivePage().openEditor(new StringEditorInput("Here we can put the connection string for a Neo4J database later"), editorId);
         assertNotNull(editorPart);
