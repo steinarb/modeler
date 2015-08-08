@@ -12,7 +12,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.part.ViewPart;
 
 public class View extends ViewPart {
-    public static final String ID = "GEFNeo4J.view";
+    public static final String ID = "GEFModelstore.view";
 
     // Use a standard viewer for the Draw2d canvas
     private ScrollingGraphicalViewer viewer = new ScrollingGraphicalViewer();
