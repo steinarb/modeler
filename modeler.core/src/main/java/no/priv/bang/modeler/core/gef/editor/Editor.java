@@ -2,18 +2,25 @@ package no.priv.bang.modeler.core.gef.editor;
 
 import no.priv.bang.modeler.core.gef.mvc.GraphicalPartFactory;
 import no.priv.bang.modeler.core.model.Model;
-
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.gef.DefaultEditDomain;
 import org.eclipse.gef.GraphicalViewer;
 import org.eclipse.gef.editparts.ScalableRootEditPart;
 import org.eclipse.gef.palette.PaletteRoot;
 import org.eclipse.gef.ui.parts.GraphicalEditorWithFlyoutPalette;
+import org.eclipse.ui.IEditorInput;
+import org.eclipse.ui.IEditorSite;
+import org.eclipse.ui.PartInitException;
 
 public class Editor extends GraphicalEditorWithFlyoutPalette {
 
     public Editor() {
         setEditDomain(new DefaultEditDomain(this));
+    }
+
+    @Override
+    public void init(IEditorSite site, IEditorInput input) throws PartInitException {
+        super.init(site, input);
     }
 
     @Override
