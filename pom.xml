@@ -118,10 +118,10 @@
  <modules>
   <module>modeler.target</module>
   <module>modeler.core</module>
+  <module>modeler.core.test</module>
   <module>modeler.test</module>
   <module>modeler.feature</module>
   <module>modeler.site</module>
-  <module>modeler.core.test</module>
  </modules>
  <dependencies>
   <dependency>
