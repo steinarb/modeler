@@ -9,4 +9,25 @@
  <artifactId>modeler.target</artifactId>
  <packaging>eclipse-target-definition</packaging>
  <name>modeler.target</name>
+ <build>
+  <plugins>
+   <plugin>
+    <groupId>lt.velykis.maven</groupId>
+    <artifactId>pde-target-maven-plugin</artifactId>
+    <version>1.0.0</version>
+    <executions>
+     <execution>
+      <id>pde-target</id>
+      <goals>
+       <goal>add-pom-dependencies</goal>
+      </goals>
+      <configuration>
+       <baseDefinition>${project.basedir}/modeler.target.target</baseDefinition>
+       <outputFile>${project.build.directory}/my-target-pde.target</outputFile>
+      </configuration>
+     </execution>
+    </executions>
+   </plugin>
+  </plugins>
+ </build>
 </project>
