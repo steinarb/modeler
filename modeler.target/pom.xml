@@ -23,7 +23,7 @@
       </goals>
       <configuration>
        <baseDefinition>${project.basedir}/modeler.target.target</baseDefinition>
-       <outputFile>${project.build.directory}/my-target-pde.target</outputFile>
+       <outputFile>${project.build.directory}/modeler-generated.target</outputFile>
       </configuration>
      </execution>
     </executions>
