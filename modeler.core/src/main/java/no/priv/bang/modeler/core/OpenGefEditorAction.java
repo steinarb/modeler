@@ -15,7 +15,7 @@ public class OpenGefEditorAction implements IWorkbenchWindowActionDelegate {
     public void run(IAction action) {
         try {
             System.out.println("Opening GEF editor");
-            String editorId = "no.priv.bang.modeler.core.gef.editor.Editor";
+            String editorId = "no.priv.bang.modelstore.gef.editor.Editor";
             window.getActivePage().openEditor(new StringEditorInput("Here we can put the connection string for a Neo4J database later"), editorId);
         } catch (PartInitException e) {
             // TODO Auto-generated catch block
