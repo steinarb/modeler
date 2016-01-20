@@ -2,6 +2,9 @@ package no.priv.bang.modeler.core.gef;
 
 import no.priv.bang.modeler.core.gef.mvc.GraphicalPartFactory;
 import no.priv.bang.modeler.core.model.Model;
+import no.priv.bang.modeling.modelstore.Modelstore;
+
+import javax.inject.Inject;
 
 import org.eclipse.gef.EditPartFactory;
 import org.eclipse.gef.RootEditPart;
@@ -26,6 +29,8 @@ public class View extends ViewPart {
 
     private Model model;
 
+    private Modelstore modelstore;
+
     @Override
     public void createPartControl(Composite parent) {
         // Create a dummy model
@@ -48,6 +53,12 @@ public class View extends ViewPart {
     @Override
     public void setFocus() {
         viewer.getControl().setFocus();
+    }
+
+    @Inject
+    public void setModelstore(Modelstore store) {
+        modelstore = store;
+        System.out.println("View: A Modelstore has been injected");
     }
 
 }
