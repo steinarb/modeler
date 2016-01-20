@@ -2,9 +2,14 @@ package no.priv.bang.modeler.core.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.inject.Inject;
+
+import no.priv.bang.modeling.modelstore.ModelContext;
+import no.priv.bang.modeling.modelstore.Modelstore;
 
 public class Model {
     List<Node> nodes = new ArrayList<Node>();
+    private Modelstore modelstore;
 
     public Model() {
         for (int i = 0; i < 10; i++) {
@@ -26,6 +31,12 @@ public class Model {
 
     public List<Node> getNodes() {
         return nodes;
+    }
+
+    @Inject
+    public void setModelstore(Modelstore store) {
+        modelstore = store;
+        System.out.println("Model: A ModelContext has been injected");
     }
 
 }
