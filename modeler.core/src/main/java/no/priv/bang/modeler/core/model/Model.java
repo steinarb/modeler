@@ -4,9 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Inject;
 
+import org.eclipse.e4.core.di.annotations.Creatable;
+
 import no.priv.bang.modeling.modelstore.ModelContext;
 import no.priv.bang.modeling.modelstore.Modelstore;
 
+@Creatable
 public class Model {
     List<Node> nodes = new ArrayList<Node>();
     private Modelstore modelstore;

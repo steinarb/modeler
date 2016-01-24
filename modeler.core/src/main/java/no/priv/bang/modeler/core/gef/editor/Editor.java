@@ -7,6 +7,9 @@ import no.priv.bang.modeling.modelstore.Modelstore;
 import javax.inject.Inject;
 
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.e4.core.contexts.ContextInjectionFactory;
+import org.eclipse.e4.core.contexts.EclipseContextFactory;
+import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.gef.DefaultEditDomain;
 import org.eclipse.gef.GraphicalViewer;
 import org.eclipse.gef.editparts.ScalableRootEditPart;
@@ -15,6 +18,7 @@ import org.eclipse.gef.ui.parts.GraphicalEditorWithFlyoutPalette;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorSite;
 import org.eclipse.ui.PartInitException;
+import org.eclipse.ui.PlatformUI;
 
 public class Editor extends GraphicalEditorWithFlyoutPalette {
 
@@ -37,7 +41,8 @@ public class Editor extends GraphicalEditorWithFlyoutPalette {
         GraphicalViewer graphicalViewer = getGraphicalViewer();
         graphicalViewer.setRootEditPart(new ScalableRootEditPart());
         graphicalViewer.setEditPartFactory(new GraphicalPartFactory());
-        graphicalViewer.setContents(new Model());
+        IEclipseContext eclipseContext = (IEclipseContext) PlatformUI.getWorkbench().getService(IEclipseContext.class);
+        graphicalViewer.setContents(ContextInjectionFactory.make(Model.class, eclipseContext));
     }
 
     @Override
