@@ -3,8 +3,8 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>no.priv.bang</groupId>
-        <artifactId>modeler</artifactId>
+        <groupId>no.priv.bang.modeler</groupId>
+        <artifactId>modeler.tests</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
     <artifactId>modeler.core.test</artifactId>
@@ -20,7 +20,7 @@
             <version>4.11</version>
         </dependency>
         <dependency>
-            <groupId>no.priv.bang</groupId>
+            <groupId>no.priv.bang.modeler</groupId>
             <artifactId>modeler.core</artifactId>
             <version>1.0.0-SNAPSHOT</version>
             <type>eclipse-plugin</type>
