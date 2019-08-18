@@ -1,0 +1,135 @@
+* An eclipse GEF-based graphical modeler with Neo4J as storage
+** Overview
+** Development status
+** Building locally
+I'm only giving the instructions for how to install on debian or ubuntu or similar (e.g. mint) GNU/linux systems.
+
+Figuring out the commands for how to install the software on non-APT GNU/linux systems, macs or windows boxes, are left as an exercise for the reader (but the same software packages are required for development).
+
+*** Prerequites
+**** git and maven
+All commands below are shown run as root on debian.  Prefix the commands with sudo if running on ubuntu.
+
+Instructions:
+ 1. Install git, on a debian/ubuntu GNU/linux distribution, this is done by giving the following command as root:
+    : apt install git
+ 2. Install java SDK, on a debian/ubuntu GNU/linux distribution, this is done by giving the following command as root:
+    : apt install openjdk-11-jdk
+ 3. Install maven, on a debian/ubuntu GNU/linux distribution, this is done by giving the following command as root:
+    : apt install maven
+**** Eclipse and tycho
+
+The eclipse packaged by debian is too old and buggy to use.
+
+Instead, follow the instructions below (should work for all GN/linux distros).  All commands are run as a regular user.
+
+ 1. Clone the modeler project:
+    #+BEGIN_EXAMPLE
+      cd $HOME
+      mkdir -p workspaces/ws01
+      cd workspaces/ws01
+      git clone https://github.com/steinarb/modeler.git
+    #+END_EXAMPLE
+ 2. Download the eclipse installer:
+    #+BEGIN_EXAMPLE
+      cd /tmp
+      wget https://mirrors.dotsrc.org/eclipse//oomph/epp/2019-06/R/eclipse-inst-linux64.tar.gz
+    #+END_EXAMPLE
+    1. For windows or mac, download and run the appropriate installer from  https://www.eclipse.org/downloads/packages/installer
+ 3. Unpack and start the installer:
+    #+BEGIN_EXAMPLE
+      cd /tmp
+      tar xvfz eclipse-inst-linux64.tar.gz
+      cd eclipse-installer
+      ./eclipse-inst
+    #+END_EXAMPLE
+ 4. In the "eclipseinstaller" dialog:
+    1. In type filter text, type:
+       : rcp
+    2. Click on "Eclipse for RCP and RAP developers"
+    3. Click on the button "INSTALL" (keep all defaults)
+    4. In the dialog "Oomph License Confirmation":
+       1. Check off "Remember accepted licenses"
+       2. Click on the button "Accept"
+       3. In the dialog "Certificates":
+          1. Click the button "Select All"
+          2. Click the button "Accept selected"
+       4. Click the button "LAUNCH"
+    5. In the dialog "Eclipse IDE Launcher":
+       1. In the Workspace field replace "eclipse-workspace" with:
+          : workspaces/ws01
+       2. Click the button "Launch"
+    6. In eclipse IDE:
+       1. Uncheck "Always show Welcome view on startup"
+       2. Close the welcome view
+       3. Select the menu Window->Preferences
+       4. In the dialog "Preferences":
+          1. Select "Maven"
+          2. Change the settings to be:
+             |   | Offline                                                           |
+             | x | Do not automatically update dependencies from remote repositories |
+             |   | Debug output                                                      |
+             | x | Download artifact sources                                         |
+             | x | Download artifact javadoc                                         |
+             | x | Download repository index on startup                              |
+             | x | Update maven projects on startup                                  |
+             | x | Automatically update Maven projects configuration (experimental)  |
+             | x | Hide folders of physically nested modules (experimental)          |
+          3. Click the button "Apply"
+          4. Select Maven->Discovery
+          5. Click the button "Open Catalog"
+          6. In the dialog "m2e catalog":
+             1. In "Find", type:
+                : tycho
+             2. Tick the checkbox of "Tycho Configurator"
+             3. Click the button "Finish"
+             4. In the dialog "Install":
+                1. Click the button "Next>"
+                2. Click the button "Next>"
+                3. Select "I accept the terms of the license agreement"
+                4. Click the button "Finish"
+                5. In the dialog "Security Warning":
+                   1. Click the button "Install anyway"
+                6. In the dialog "Software updates"
+                   1. Click the button "Restart Now"
+
+**** Import the source code in eclipse
+
+Instructions:
+    1. In the restarted "Eclipse IDE"
+       1. Select the menu File->Import...
+       2. In the dialog "Import":
+          1. Select Maven->Existing Maven Projects
+          2. Click the button "Next>"
+          3. Click the button "Browse..."
+          4. In the dialog "Select Root Folder":
+             1. Browse to the workspaces/ws01 subdirectory of your home directory
+             2. Click the button "Open"
+          5. Click the button "Deselect All"
+          6. Select the pom files:
+             1. modeler.target/pom.xml
+             2. modeler.feature/pom.xml
+             3. modeler.core/pom.xml
+             4. modeler.core.test/pom.xml
+             5. modeler.test/pom.xml
+          7. Click the button "Finish"
+
+**** Neo4J server
+
+The modeller need a Neo4J server.
+
+For installing on other systems than debian based GNU/linux systems, see [[https://neo4j.com/docs/operations-manual/current/installation/][the Neo4J documentation]].
+
+For [[https://neo4j.com/docs/operations-manual/current/installation/linux/debian/#debian-add-repository][installing on debian or ubuntu]], do:
+ 1. Add the Neo4J APT repository, do the following commands as root:
+    #+BEGIN_EXAMPLE
+      wget -O - https://debian.neo4j.org/neotechnology.gpg.key | apt-key add -
+      echo 'deb https://debian.neo4j.org/repo stable/' | tee -a /etc/apt/sources.list.d/neo4j.list
+      apt update
+    #+END_EXAMPLE
+ 2. Install neo4j community edition:
+    #+BEGIN_EXAMPLE
+      echo "neo4j-enterprise neo4j/question select I ACCEPT" | debconf-set-selections
+      echo "neo4j-enterprise neo4j/license note" | debconf-set-selections
+      apt install neo4j=1:3.5.8
+    #+END_EXAMPLE
