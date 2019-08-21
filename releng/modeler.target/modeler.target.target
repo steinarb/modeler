@@ -1,13 +1,88 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?pde version="3.8"?><target name="modeler.target" sequenceNumber="48">
-<locations>
-    <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
-        <unit id="org.eclipse.equinox.executable.feature.group" version="3.6.0.v20140117-1004"/>
-        <unit id="org.eclipse.jdt.feature.group" version="3.9.2.v20140221-1700"/>
-        <unit id="org.eclipse.gef.feature.group" version="3.9.1.201308190730"/>
-        <unit id="org.eclipse.platform.feature.group" version="4.3.2.v20140221-1852"/>
-        <unit id="org.eclipse.e4.rcp.feature.group" version="1.2.2.v20140206-1358"/>
-        <repository location="http://download.eclipse.org/releases/kepler"/>
-    </location>
-</locations>
+<?pde version="3.8"?>
+<target includeMode="feature" name="modeler.target" sequenceNumber="48">
+	<locations>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+			<repository location="https://download.eclipse.org/releases/2019-06"/>
+			<unit id="org.eclipse.collections.feature.source.feature.group" version="9.2.0.v20180518-1448"/>
+			<unit id="org.eclipse.fx.runtime.min.feature.feature.group" version="3.5.0.201902220600"/>
+			<unit id="org.eclipse.gef.cloudio.sdk.feature.group" version="5.0.2.201905091638"/>
+			<unit id="org.eclipse.gef.cloudio.user.feature.group" version="5.0.2.201905091638"/>
+			<unit id="org.eclipse.gef.common.sdk.feature.group" version="5.0.0.201905091638"/>
+			<unit id="org.eclipse.gef.dot.sdk.feature.group" version="5.0.400.201905091638"/>
+			<unit id="org.eclipse.gef.dot.user.feature.group" version="5.0.400.201905091638"/>
+			<unit id="org.eclipse.gef.fx.sdk.feature.group" version="5.0.2.201905091638"/>
+			<unit id="org.eclipse.gef.geometry.sdk.feature.group" version="5.0.2.201905091638"/>
+			<unit id="org.eclipse.gef.graph.sdk.feature.group" version="5.1.0.201905091638"/>
+			<unit id="org.eclipse.gef.layout.sdk.feature.group" version="5.0.0.201905091638"/>
+			<unit id="org.eclipse.gef.mvc.sdk.feature.group" version="5.1.0.201905091638"/>
+			<unit id="org.eclipse.gef.zest.sdk.feature.group" version="5.1.0.201905091638"/>
+			<unit id="org.eclipse.scout.sdk-feature.feature.group" version="9.0.0.018_Simrel_2019_06"/>
+			<unit id="org.eclipse.sdk.feature.group" version="4.12.0.v20190605-1801"/>
+			<unit id="org.eclipse.userstorage.sdk.feature.group" version="1.2.0.v20190308-0433"/>
+		</location>
+	</locations>
+	<includeBundles>
+		<feature id="org.eclipse.gef.cloudio.doc"/>
+		<feature id="org.eclipse.gef.cloudio.doc.user"/>
+		<feature id="org.eclipse.gef.cloudio.sdk"/>
+		<feature id="org.eclipse.gef.cloudio.ui"/>
+		<feature id="org.eclipse.gef.cloudio.ui.source"/>
+		<feature id="org.eclipse.gef.cloudio.user"/>
+		<feature id="org.eclipse.gef.common"/>
+		<feature id="org.eclipse.gef.common.doc"/>
+		<feature id="org.eclipse.gef.common.sdk"/>
+		<feature id="org.eclipse.gef.common.source"/>
+		<feature id="org.eclipse.gef.dot"/>
+		<feature id="org.eclipse.gef.dot.doc"/>
+		<feature id="org.eclipse.gef.dot.doc.user"/>
+		<feature id="org.eclipse.gef.dot.sdk"/>
+		<feature id="org.eclipse.gef.dot.source"/>
+		<feature id="org.eclipse.gef.dot.ui"/>
+		<feature id="org.eclipse.gef.dot.ui.source"/>
+		<feature id="org.eclipse.gef.dot.user"/>
+		<feature id="org.eclipse.gef.fx"/>
+		<feature id="org.eclipse.gef.fx.doc"/>
+		<feature id="org.eclipse.gef.fx.jface"/>
+		<feature id="org.eclipse.gef.fx.jface.source"/>
+		<feature id="org.eclipse.gef.fx.sdk"/>
+		<feature id="org.eclipse.gef.fx.source"/>
+		<feature id="org.eclipse.gef.fx.swt"/>
+		<feature id="org.eclipse.gef.fx.swt.source"/>
+		<feature id="org.eclipse.gef.geometry"/>
+		<feature id="org.eclipse.gef.geometry.convert.fx"/>
+		<feature id="org.eclipse.gef.geometry.convert.fx.source"/>
+		<feature id="org.eclipse.gef.geometry.convert.swt"/>
+		<feature id="org.eclipse.gef.geometry.convert.swt.source"/>
+		<feature id="org.eclipse.gef.geometry.doc"/>
+		<feature id="org.eclipse.gef.geometry.sdk"/>
+		<feature id="org.eclipse.gef.geometry.source"/>
+		<feature id="org.eclipse.gef.graph"/>
+		<feature id="org.eclipse.gef.graph.doc"/>
+		<feature id="org.eclipse.gef.graph.sdk"/>
+		<feature id="org.eclipse.gef.graph.source"/>
+		<feature id="org.eclipse.gef.layout"/>
+		<feature id="org.eclipse.gef.layout.doc"/>
+		<feature id="org.eclipse.gef.layout.sdk"/>
+		<feature id="org.eclipse.gef.layout.source"/>
+		<feature id="org.eclipse.gef.mvc.doc"/>
+		<feature id="org.eclipse.gef.mvc.fx"/>
+		<feature id="org.eclipse.gef.mvc.fx.source"/>
+		<feature id="org.eclipse.gef.mvc.fx.ui"/>
+		<feature id="org.eclipse.gef.mvc.fx.ui.source"/>
+		<feature id="org.eclipse.gef.mvc.sdk"/>
+		<feature id="org.eclipse.gef.zest.doc"/>
+		<feature id="org.eclipse.gef.zest.fx"/>
+		<feature id="org.eclipse.gef.zest.fx.jface"/>
+		<feature id="org.eclipse.gef.zest.fx.jface.source"/>
+		<feature id="org.eclipse.gef.zest.fx.source"/>
+		<feature id="org.eclipse.gef.zest.fx.ui"/>
+		<feature id="org.eclipse.gef.zest.fx.ui.source"/>
+		<feature id="org.eclipse.gef.zest.sdk"/>
+		<feature id="org.eclipse.e4.rcp"/>
+		<feature id="org.eclipse.e4.rcp.source"/>
+		<feature id="org.eclipse.emf.common"/>
+		<feature id="org.eclipse.emf.ecore"/>
+		<feature id="org.eclipse.fx.runtime.min.feature"/>
+	</includeBundles>
 </target>
