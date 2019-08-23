@@ -1,6 +1,8 @@
 * An eclipse GEF-based graphical modeler with Neo4J as storage
 ** Overview
 ** Development status
+[[https://travis-ci.org/steinarb/modeler][file:https://travis-ci.org/steinarb/modeler.png]]
+
 ** Building locally
 I'm only giving the instructions for how to install on debian or ubuntu or similar (e.g. mint) GNU/linux systems.
 
